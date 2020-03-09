@@ -4,7 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+    exception.cpp
 
 HEADERS += \
-    smartpointer.h
+    smartpointer.h \
+    exception.h
