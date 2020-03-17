@@ -12,7 +12,7 @@ int main()
     //测试
     try
     {
-        throw Exception("test",__FILE__,__LINE__);
+       THROW_EXCEPTION(Exception,"test");
     }
     catch (const Exception& e)
     {
