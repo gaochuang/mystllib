@@ -13,7 +13,7 @@ void Exception::init(const char* message,const char* file,int line)
 {
     char temp[16] = {0};
 
-    if(nullptr != file && nullptr != message )
+    if(NULL != file && NULL != message )
     {
         m_message = strdup(message);
         snprintf(temp,sizeof(temp),"%d",line);
@@ -25,19 +25,19 @@ void Exception::init(const char* message,const char* file,int line)
     }
     else
     {
-        m_location = nullptr;
-        m_message = nullptr;
+        m_location = NULL;
+        m_message = NULL;
     }
 }
 
 Exception::Exception(const char* message)
 {
-    init(message,nullptr,0);
+    init(message,NULL,0);
 }
 
 Exception::Exception(const char* file,int line)
 {
-    init(nullptr,file,line);
+    init(NULL,file,line);
 }
 
 Exception::Exception(const char* message,const char* file,int line)
@@ -81,8 +81,8 @@ Exception::~Exception()
     free(m_message);
     free(m_location);
 
-    m_message =nullptr;
-    m_location = nullptr;
+    m_message =NULL;
+    m_location = NULL;
 }
 
 }

@@ -51,9 +51,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../MyStlLib/main.cpp \
-		../MyStlLib/exception.cpp 
+		../MyStlLib/exception.cpp \
+		../MyStlLib/object.cpp 
 OBJECTS       = main.o \
-		exception.o
+		exception.o \
+		object.o
 DIST          = ../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt5.11.3/5.11.3/clang_64/mkspecs/qdevice.pri \
 		../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/device_config.prf \
@@ -221,8 +223,10 @@ DIST          = ../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/spec_pre.prf 
 		../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/yacc.prf \
 		../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/lex.prf \
 		../MyStlLib/MyStlLib.pro smartpointer.h \
-		exception.h ../MyStlLib/main.cpp \
-		../MyStlLib/exception.cpp
+		exception.h \
+		object.h ../MyStlLib/main.cpp \
+		../MyStlLib/exception.cpp \
+		../MyStlLib/object.cpp
 QMAKE_TARGET  = MyStlLib
 DESTDIR       = 
 TARGET        = MyStlLib
@@ -623,11 +627,16 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../MyStlLib/main.cpp ../MyStlLib/smartpointer.h
+main.o: ../MyStlLib/main.cpp ../MyStlLib/smartpointer.h \
+		../MyStlLib/exception.h \
+		../MyStlLib/object.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MyStlLib/main.cpp
 
 exception.o: ../MyStlLib/exception.cpp ../MyStlLib/exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o exception.o ../MyStlLib/exception.cpp
+
+object.o: ../MyStlLib/object.cpp ../MyStlLib/object.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o object.o ../MyStlLib/object.cpp
 
 ####### Install
 

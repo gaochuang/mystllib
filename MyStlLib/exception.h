@@ -1,5 +1,6 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
+#include<cstdlib>
 
 namespace  MyLib
 {
@@ -34,7 +35,7 @@ public:
 class ArithmeticException : public Exception
 {
 public:
-    ArithmeticException():Exception(nullptr){}
+    ArithmeticException():Exception(NULL){}
 
     ArithmeticException(const char* message):Exception(message){};
 
@@ -59,7 +60,7 @@ public:
 class PointerException : public Exception
 {
 public:
-    PointerException():Exception(nullptr){}
+    PointerException():Exception(NULL){}
 
     PointerException(const char* message):Exception(message){};
 
