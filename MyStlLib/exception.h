@@ -1,12 +1,15 @@
 #ifndef EXCEPTION_H
 #define EXCEPTION_H
 #include<cstdlib>
+#include "object.h"
 
 namespace  MyLib
 {
 
+//不支持异常时#define THROW_EXCEPTION(e,m)
 #define THROW_EXCEPTION(e,m) (throw e(m,__FILE__,__LINE__))
-class Exception
+
+class Exception : public Object
 {
 protected:
 
@@ -147,6 +150,30 @@ public:
         return *this;
     }
     ~InvalidParameterException();
+
+};
+
+
+//计算异常类
+class InvalidOperatorException : public Exception
+{
+public:
+    InvalidOperatorException():Exception(nullptr){}
+
+    InvalidOperatorException(const char* message):Exception(message){};
+
+    InvalidOperatorException(const char* file,int line):Exception(file,line){};
+
+    InvalidOperatorException(const char* message,const char* file,int line):Exception(message,file,line){};
+
+    InvalidOperatorException(const InvalidOperatorException& e):Exception(e){};
+
+    InvalidOperatorException& operator=(const InvalidOperatorException& e)
+    {
+        Exception::operator=(e);
+        return *this;
+    }
+    ~InvalidOperatorException();
 
 };
 

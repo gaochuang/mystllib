@@ -19,9 +19,18 @@ void Exception::init(const char* message,const char* file,int line)
         snprintf(temp,sizeof(temp),"%d",line);
         //异常位置（文件名：行号）
         m_location = static_cast<char*>(malloc(strlen(m_message) + strlen(temp) +2));
-        m_location = strcpy(m_location,file);
-        m_location = strcat(m_location,":");
-        m_location = strcat(m_location,temp);
+        if(NULL != m_location)
+        {
+            m_location = strcpy(m_location,file);
+            m_location = strcat(m_location,":");
+            m_location = strcat(m_location,temp);
+        }
+
+        //else
+       // {
+      //     NoEnoughMemoryException("memcory not enough");
+     //   }
+
     }
     else
     {

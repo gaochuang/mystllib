@@ -4,8 +4,9 @@
 
 using namespace std;
 
-namespace Mylib
+namespace  MyLib
 {
+
 void* Object::operator new (unsigned long size) throw()
 {
     return malloc(size);
@@ -16,7 +17,7 @@ void Object::operator delete (void* p)
     free(p);
 }
 
-void* Object::operator new[] (unsigned long size) throw()
+void* Object::operator new [] (unsigned long size) throw()
 {
     return malloc(size);
 }
@@ -39,4 +40,5 @@ bool Object::operator != (const Object& obj)
 Object::~Object()
 {
 }
+
 }

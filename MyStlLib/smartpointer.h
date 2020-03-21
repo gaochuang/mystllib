@@ -1,19 +1,20 @@
 #ifndef SMARTPOINTER_H
 #define SMARTPOINTER_H
-
+#include<cstdlib>
+#include"object.h"
 
 namespace  MyLib
 {
 
 /*智能指针类*/
 template <typename T>
-class SmartPointer
+class SmartPointer : public Object
 {
 protected:
         T *m_pointer;
 
 public:
-    SmartPointer(T* p= nullptr)
+    SmartPointer(T* p= NULL)
     {
         m_pointer = p;
     }
@@ -23,7 +24,7 @@ public:
     {
         m_pointer = obj.m_pointer;
 
-        const_cast<SmartPointer<T>&>(obj).m_pointer = nullptr;
+        const_cast<SmartPointer<T>&>(obj).m_pointer = NULL;
 
     }
 
@@ -36,7 +37,7 @@ public:
             //释放自己堆空间
             delete  m_pointer;
             m_pointer = obj.m_pointer;
-            const_cast<SmartPointer<T> &>(obj).m_pointer = nullptr;
+            const_cast<SmartPointer<T> &>(obj).m_pointer = NULL;
         }
 
         //返回自己为了方便连续赋值
@@ -56,7 +57,7 @@ public:
 
     bool isNull()
     {
-        return (nullptr == m_pointer);
+        return (NULL == m_pointer);
     }
 
     ~SmartPointer()
