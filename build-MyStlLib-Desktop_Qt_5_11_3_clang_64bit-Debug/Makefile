@@ -224,7 +224,11 @@ DIST          = ../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/spec_pre.prf 
 		../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/lex.prf \
 		../MyStlLib/MyStlLib.pro smartpointer.h \
 		exception.h \
-		object.h ../MyStlLib/main.cpp \
+		object.h \
+		list.h \
+		seqlist.h \
+		staticlist.h \
+		staticlist.h ../MyStlLib/main.cpp \
 		../MyStlLib/exception.cpp \
 		../MyStlLib/object.cpp
 QMAKE_TARGET  = MyStlLib
@@ -627,12 +631,15 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../MyStlLib/main.cpp ../MyStlLib/smartpointer.h \
-		../MyStlLib/exception.h \
-		../MyStlLib/object.h
+main.o: ../MyStlLib/main.cpp ../MyStlLib/staticlist.h \
+		../MyStlLib/seqlist.h \
+		../MyStlLib/list.h \
+		../MyStlLib/object.h \
+		../MyStlLib/exception.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../MyStlLib/main.cpp
 
-exception.o: ../MyStlLib/exception.cpp ../MyStlLib/exception.h
+exception.o: ../MyStlLib/exception.cpp ../MyStlLib/exception.h \
+		../MyStlLib/object.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o exception.o ../MyStlLib/exception.cpp
 
 object.o: ../MyStlLib/object.cpp ../MyStlLib/object.h
