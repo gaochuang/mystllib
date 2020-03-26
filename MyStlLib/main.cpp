@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "staticlist.h"
+#include "dynamiclist.h"
 
 using namespace std;
 using namespace MyLib;
@@ -7,7 +7,7 @@ using namespace MyLib;
 int main()
 {
 
-   Staticlist<int,5> test;
+   DynamicLisy<int> test(5);
 
    for(int i=0;i<test.capacity();i++)
    {

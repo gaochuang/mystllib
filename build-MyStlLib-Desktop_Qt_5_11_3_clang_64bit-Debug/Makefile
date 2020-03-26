@@ -228,7 +228,8 @@ DIST          = ../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/spec_pre.prf 
 		list.h \
 		seqlist.h \
 		staticlist.h \
-		staticlist.h ../MyStlLib/main.cpp \
+		staticlist.h \
+		dynamiclist.h ../MyStlLib/main.cpp \
 		../MyStlLib/exception.cpp \
 		../MyStlLib/object.cpp
 QMAKE_TARGET  = MyStlLib
@@ -631,7 +632,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../MyStlLib/main.cpp ../MyStlLib/staticlist.h \
+main.o: ../MyStlLib/main.cpp ../MyStlLib/dynamiclist.h \
 		../MyStlLib/seqlist.h \
 		../MyStlLib/list.h \
 		../MyStlLib/object.h \
