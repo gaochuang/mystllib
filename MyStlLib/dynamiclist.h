@@ -31,7 +31,7 @@ public:
 
     int capacity() const
     {
-        return capacity();
+        return m_capacity;
     }
 
     //重新设置存储空间大小

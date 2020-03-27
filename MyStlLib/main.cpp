@@ -13,10 +13,9 @@ int main()
    {
          test.insert(0,i);
    }
-
     for(int i=0;i<test.length();i++)
    {
       cout<<test[i]<<endl;
-    }
+   }
     return 0;
 }
