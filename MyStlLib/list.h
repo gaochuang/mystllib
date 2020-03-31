@@ -9,7 +9,13 @@ namespace MyLib
 template <typename T>
 class List : public Object
 {
+protected:
+       //禁用拷贝构造和赋值构造
+       List(const List& obj);
+       List& operator= (const List& obj);
 public:
+     List(){};
+    virtual bool insert(const T& e)=0;
     virtual bool insert(int i,const T& e) =0;
     virtual bool remove(int i) =0;
     virtual bool set(int i,const T& e)=0;
