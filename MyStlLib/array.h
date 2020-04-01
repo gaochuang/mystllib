@@ -10,25 +10,25 @@ template <typename T>
 class Array : public Object
 {
 protected:
-    T *array;
+    T *m_array;
 public:
     virtual bool set(int i,const T& e)
     {
         bool ret = ((i>=0)&&(i<length()));
         if(ret)
         {
-            array[i]=e;
+            m_array[i]=e;
         }
 
         return ret;
     }
 
-    virtual bool get(int i,const T& e)
+    virtual bool get(int i,  T& e)
     {
         bool ret = ((i>=0)&&(i<length()));
         if(ret)
         {
-            e=array[i];
+            e=m_array[i];
         }
 
         return ret;
@@ -38,7 +38,7 @@ public:
     {
         if((0<=i)&&(i<length()))
         {
-            return array[i];
+            return m_array[i];
         }
         else
         {

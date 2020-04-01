@@ -17,4 +17,5 @@ HEADERS += \
     staticlist.h \
     staticlist.h \
     dynamiclist.h \
-    array.h
+    array.h \
+    staticarray.h

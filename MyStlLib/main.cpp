@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "dynamiclist.h"
+#include "staticarray.h"
 
 using namespace std;
 using namespace MyLib;
@@ -7,15 +7,19 @@ using namespace MyLib;
 int main()
 {
 
-   DynamicLisy<int> test(5);
+    StaticArray<int,5> s1;
 
-   for(int i=0;i<test.capacity();i++)
-   {
-         test.insert(0,i);
-   }
-    for(int i=0;i<test.length();i++)
-   {
-      cout<<test[i]<<endl;
-   }
+    for(int i=0;s1.length();i++)
+    {
+        s1[i]=i*i;
+    }
+
+    for(int i=0;i<s1.length();i++)
+    {
+        cout<<s1[i]<<endl;
+    }
+
+
+
     return 0;
 }
