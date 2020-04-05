@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "staticarray.h"
+#include "dynamicarray.h"
 
 using namespace std;
 using namespace MyLib;
@@ -7,9 +7,9 @@ using namespace MyLib;
 int main()
 {
 
-    StaticArray<int,5> s1;
+    DynamicArray<int> s1(5);
 
-    for(int i=0;s1.length();i++)
+    for(int i=0;i<s1.length();i++)
     {
         s1[i]=i*i;
     }
@@ -19,6 +19,21 @@ int main()
         cout<<s1[i]<<endl;
     }
 
+    DynamicArray<int> s2(10);
+
+
+    s2=s1;
+    for(int i=0;i<s2.length();i++)
+    {
+        cout<<s2[i]<<endl;
+    }
+
+    s2.resize(3);
+
+    for(int i=0;i<s2.length();i++)
+    {
+        cout<<s2[i]<<endl;
+    }
 
 
     return 0;
