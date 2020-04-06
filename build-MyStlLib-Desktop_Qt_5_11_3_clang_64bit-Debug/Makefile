@@ -232,7 +232,8 @@ DIST          = ../../../Qt5.11.3/5.11.3/clang_64/mkspecs/features/spec_pre.prf 
 		dynamiclist.h \
 		array.h \
 		staticarray.h \
-		dynamicarray.h ../MyStlLib/main.cpp \
+		dynamicarray.h \
+		linklist.h ../MyStlLib/main.cpp \
 		../MyStlLib/exception.cpp \
 		../MyStlLib/object.cpp
 QMAKE_TARGET  = MyStlLib
@@ -635,7 +636,7 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../MyStlLib/main.cpp ../MyStlLib/staticarray.h \
+main.o: ../MyStlLib/main.cpp ../MyStlLib/dynamicarray.h \
 		../MyStlLib/array.h \
 		../MyStlLib/object.h \
 		../MyStlLib/exception.h
