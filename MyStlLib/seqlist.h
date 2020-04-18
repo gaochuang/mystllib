@@ -78,6 +78,19 @@ public:
         return ret;
      }
 
+     int find(const T& e)
+     {
+        int ret = -1;
+        for(int i=0;i<m_length;i++)
+        {
+            if(e == m_array[i])
+            {
+                ret = i;
+                break;
+            }
+        }
+        return ret;
+     }
      int  length() const
      {
          return m_length;
