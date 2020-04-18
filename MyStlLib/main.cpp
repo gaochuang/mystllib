@@ -1,38 +1,22 @@
 ﻿#include <iostream>
 #include "dynamicarray.h"
+#include"linklist.h"
 
 using namespace std;
 using namespace MyLib;
 
 int main()
 {
+    LinkList<int> list;
 
-    DynamicArray<int> s1(5);
-
-    for(int i=0;i<s1.length();i++)
+    for(int i=0;i<5;i++)
     {
-        s1[i]=i*i;
+        list.insert(0,i);
     }
 
-    for(int i=0;i<s1.length();i++)
+    for(list.move(0);!list.end();list.next())
     {
-        cout<<s1[i]<<endl;
-    }
-
-    DynamicArray<int> s2(10);
-
-
-    s2=s1;
-    for(int i=0;i<s2.length();i++)
-    {
-        cout<<s2[i]<<endl;
-    }
-
-    s2.resize(3);
-
-    for(int i=0;i<s2.length();i++)
-    {
-        cout<<s2[i]<<endl;
+        cout<<list.current()<<endl;
     }
 
 

@@ -78,7 +78,7 @@ public:
         return ret;
      }
 
-     int find(const T& e)
+     int find(const T& e) const
      {
         int ret = -1;
         for(int i=0;i<m_length;i++)
